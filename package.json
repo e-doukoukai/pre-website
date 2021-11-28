@@ -28,6 +28,7 @@
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
     "@local/common": "file:common/dist",
+    "@ngneat/tailwind": "^7.0.3",
     "@ngrx/effects": "^12.4.0",
     "@ngrx/store": "^12.4.0",
     "@ngrx/store-devtools": "^12.4.0",
@@ -52,6 +53,10 @@
     "@commitlint/config-conventional": "^13.1.0",
     "@cypress/schematic": "^1.5.0",
     "@ngrx/schematics": "^12.4.0",
+    "@tailwindcss/aspect-ratio": "latest",
+    "@tailwindcss/forms": "latest",
+    "@tailwindcss/line-clamp": "latest",
+    "@tailwindcss/typography": "latest",
     "@testing-library/cypress": "^8.0.1",
     "@trivago/prettier-plugin-sort-imports": "^2.0.4",
     "@types/jest": "^27.0.1",
@@ -73,6 +78,7 @@
     "ng-packagr": "^12.1.1",
     "open": "^7.0.3",
     "prettier": "^2.3.2",
+    "tailwindcss": "latest",
     "typescript": "~4.3.5"
   }
 }
