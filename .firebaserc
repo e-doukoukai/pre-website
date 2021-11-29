@@ -3,10 +3,10 @@
     "default": "project-id"
   },
   "targets": {
-    "project-id": {
+    "e-doukoukai": {
       "hosting": {
         "main": [
-          "project-id"
+          "e-doukoukai"
         ]
       }
     }
