@@ -1,7 +1,9 @@
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AppHomeComponent } from './pages/home/home.component';
 import { reducers, metaReducers } from './reducers';
+import { HomeModule } from './views/home/home.module';
 import { MaterialModule } from './views/material.module';
 import { ViewModule } from './views/view.module';
 import { CommonModule } from '@angular/common';
