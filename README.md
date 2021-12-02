@@ -1,3 +1,6 @@
+# 経済学部同好会 Website
+https://e-doukoukai.web.app/
+
 # TemplateAngularFirebase
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.3.
