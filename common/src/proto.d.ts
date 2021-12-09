@@ -19,12 +19,6 @@ export namespace main {
 
         /** Account image_url */
         image_url?: (string|null);
-
-        /** Account created_at */
-        created_at?: (google.protobuf.ITimestamp|null);
-
-        /** Account updated_at */
-        updated_at?: (google.protobuf.ITimestamp|null);
     }
 
     /** Represents an Account. */
@@ -50,12 +44,6 @@ export namespace main {
 
         /** Account image_url. */
         public image_url: string;
-
-        /** Account created_at. */
-        public created_at?: (google.protobuf.ITimestamp|null);
-
-        /** Account updated_at. */
-        public updated_at?: (google.protobuf.ITimestamp|null);
 
         /**
          * Encodes the specified Account message. Does not implicitly {@link main.Account.verify|verify} messages.
@@ -133,12 +121,6 @@ export namespace main {
         /** User account_ids_order */
         account_ids_order?: (string[]|null);
 
-        /** User created_at */
-        created_at?: (google.protobuf.ITimestamp|null);
-
-        /** User updated_at */
-        updated_at?: (google.protobuf.ITimestamp|null);
-
         /** User is_admin */
         is_admin?: (boolean|null);
     }
@@ -160,12 +142,6 @@ export namespace main {
 
         /** User account_ids_order. */
         public account_ids_order: string[];
-
-        /** User created_at. */
-        public created_at?: (google.protobuf.ITimestamp|null);
-
-        /** User updated_at. */
-        public updated_at?: (google.protobuf.ITimestamp|null);
 
         /** User is_admin. */
         public is_admin: boolean;
