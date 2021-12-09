@@ -4,10 +4,14 @@
   <mat-card class="mb-20">
     <div class="flex">
       <div class="flex-auto">
-        <button mat-flat-button color="primary" routerLink="/">経済学部生はこちら</button>
+        <button mat-flat-button color="primary" routerLink="/accounts/signup">
+          学生アカウントを作成
+        </button>
       </div>
       <div class="flex-auto">
-        <button mat-flat-button color="accent" routerLink="/">一般の方はこちら</button>
+        <button mat-flat-button color="accent" routerLink="/accounts/signin">
+          学生アカウントでログイン
+        </button>
       </div>
     </div>
   </mat-card>
@@ -63,9 +67,9 @@
         お問い合わせ
       </mat-list-item>
       <mat-divider></mat-divider>
-      <mat-list-item routerLink="/">
+      <mat-list-item routerLink="/accounts/account">
         <mat-icon color="accent" class="mr-4">settings</mat-icon>
-        設定
+        アカウント設定
       </mat-list-item>
     </mat-nav-list>
   </mat-card>
