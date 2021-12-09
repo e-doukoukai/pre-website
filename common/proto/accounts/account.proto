@@ -12,6 +12,4 @@ message Account {
   repeated string admin_user_ids = 3;
   string name = 4;
   string image_url = 5;
-  google.protobuf.Timestamp created_at = 6;
-  google.protobuf.Timestamp updated_at = 7;
 }

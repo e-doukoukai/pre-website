@@ -27,8 +27,6 @@ export const main = $root.main = (() => {
          * @property {Array.<string>|null} [admin_user_ids] Account admin_user_ids
          * @property {string|null} [name] Account name
          * @property {string|null} [image_url] Account image_url
-         * @property {google.protobuf.ITimestamp|null} [created_at] Account created_at
-         * @property {google.protobuf.ITimestamp|null} [updated_at] Account updated_at
          */
 
         /**
@@ -89,22 +87,6 @@ export const main = $root.main = (() => {
         Account.prototype.image_url = "";
 
         /**
-         * Account created_at.
-         * @member {google.protobuf.ITimestamp|null|undefined} created_at
-         * @memberof main.Account
-         * @instance
-         */
-        Account.prototype.created_at = null;
-
-        /**
-         * Account updated_at.
-         * @member {google.protobuf.ITimestamp|null|undefined} updated_at
-         * @memberof main.Account
-         * @instance
-         */
-        Account.prototype.updated_at = null;
-
-        /**
          * Encodes the specified Account message. Does not implicitly {@link main.Account.verify|verify} messages.
          * @function encode
          * @memberof main.Account
@@ -128,10 +110,6 @@ export const main = $root.main = (() => {
                 writer.uint32(/* id 4, wireType 2 =*/34).string(message.name);
             if (message.image_url != null && Object.hasOwnProperty.call(message, "image_url"))
                 writer.uint32(/* id 5, wireType 2 =*/42).string(message.image_url);
-            if (message.created_at != null && Object.hasOwnProperty.call(message, "created_at"))
-                $root.google.protobuf.Timestamp.encode(message.created_at, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
-            if (message.updated_at != null && Object.hasOwnProperty.call(message, "updated_at"))
-                $root.google.protobuf.Timestamp.encode(message.updated_at, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
             return writer;
         };
 
@@ -184,12 +162,6 @@ export const main = $root.main = (() => {
                     break;
                 case 5:
                     message.image_url = reader.string();
-                    break;
-                case 6:
-                    message.created_at = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
-                    break;
-                case 7:
-                    message.updated_at = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -249,16 +221,6 @@ export const main = $root.main = (() => {
             if (message.image_url != null && message.hasOwnProperty("image_url"))
                 if (!$util.isString(message.image_url))
                     return "image_url: string expected";
-            if (message.created_at != null && message.hasOwnProperty("created_at")) {
-                let error = $root.google.protobuf.Timestamp.verify(message.created_at);
-                if (error)
-                    return "created_at." + error;
-            }
-            if (message.updated_at != null && message.hasOwnProperty("updated_at")) {
-                let error = $root.google.protobuf.Timestamp.verify(message.updated_at);
-                if (error)
-                    return "updated_at." + error;
-            }
             return null;
         };
 
@@ -294,16 +256,6 @@ export const main = $root.main = (() => {
                 message.name = String(object.name);
             if (object.image_url != null)
                 message.image_url = String(object.image_url);
-            if (object.created_at != null) {
-                if (typeof object.created_at !== "object")
-                    throw TypeError(".main.Account.created_at: object expected");
-                message.created_at = $root.google.protobuf.Timestamp.fromObject(object.created_at);
-            }
-            if (object.updated_at != null) {
-                if (typeof object.updated_at !== "object")
-                    throw TypeError(".main.Account.updated_at: object expected");
-                message.updated_at = $root.google.protobuf.Timestamp.fromObject(object.updated_at);
-            }
             return message;
         };
 
@@ -328,8 +280,6 @@ export const main = $root.main = (() => {
                 object.id = "";
                 object.name = "";
                 object.image_url = "";
-                object.created_at = null;
-                object.updated_at = null;
             }
             if (message.id != null && message.hasOwnProperty("id"))
                 object.id = message.id;
@@ -347,10 +297,6 @@ export const main = $root.main = (() => {
                 object.name = message.name;
             if (message.image_url != null && message.hasOwnProperty("image_url"))
                 object.image_url = message.image_url;
-            if (message.created_at != null && message.hasOwnProperty("created_at"))
-                object.created_at = $root.google.protobuf.Timestamp.toObject(message.created_at, options);
-            if (message.updated_at != null && message.hasOwnProperty("updated_at"))
-                object.updated_at = $root.google.protobuf.Timestamp.toObject(message.updated_at, options);
             return object;
         };
 
@@ -377,8 +323,6 @@ export const main = $root.main = (() => {
          * @property {string|null} [id] User id
          * @property {string|null} [current_account_id] User current_account_id
          * @property {Array.<string>|null} [account_ids_order] User account_ids_order
-         * @property {google.protobuf.ITimestamp|null} [created_at] User created_at
-         * @property {google.protobuf.ITimestamp|null} [updated_at] User updated_at
          * @property {boolean|null} [is_admin] User is_admin
          */
 
@@ -423,22 +367,6 @@ export const main = $root.main = (() => {
         User.prototype.account_ids_order = $util.emptyArray;
 
         /**
-         * User created_at.
-         * @member {google.protobuf.ITimestamp|null|undefined} created_at
-         * @memberof main.User
-         * @instance
-         */
-        User.prototype.created_at = null;
-
-        /**
-         * User updated_at.
-         * @member {google.protobuf.ITimestamp|null|undefined} updated_at
-         * @memberof main.User
-         * @instance
-         */
-        User.prototype.updated_at = null;
-
-        /**
          * User is_admin.
          * @member {boolean} is_admin
          * @memberof main.User
@@ -465,10 +393,6 @@ export const main = $root.main = (() => {
             if (message.account_ids_order != null && message.account_ids_order.length)
                 for (let i = 0; i < message.account_ids_order.length; ++i)
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.account_ids_order[i]);
-            if (message.created_at != null && Object.hasOwnProperty.call(message, "created_at"))
-                $root.google.protobuf.Timestamp.encode(message.created_at, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-            if (message.updated_at != null && Object.hasOwnProperty.call(message, "updated_at"))
-                $root.google.protobuf.Timestamp.encode(message.updated_at, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
             if (message.is_admin != null && Object.hasOwnProperty.call(message, "is_admin"))
                 writer.uint32(/* id 6, wireType 0 =*/48).bool(message.is_admin);
             return writer;
@@ -515,12 +439,6 @@ export const main = $root.main = (() => {
                     if (!(message.account_ids_order && message.account_ids_order.length))
                         message.account_ids_order = [];
                     message.account_ids_order.push(reader.string());
-                    break;
-                case 4:
-                    message.created_at = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
-                    break;
-                case 5:
-                    message.updated_at = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
                     break;
                 case 6:
                     message.is_admin = reader.bool();
@@ -573,16 +491,6 @@ export const main = $root.main = (() => {
                     if (!$util.isString(message.account_ids_order[i]))
                         return "account_ids_order: string[] expected";
             }
-            if (message.created_at != null && message.hasOwnProperty("created_at")) {
-                let error = $root.google.protobuf.Timestamp.verify(message.created_at);
-                if (error)
-                    return "created_at." + error;
-            }
-            if (message.updated_at != null && message.hasOwnProperty("updated_at")) {
-                let error = $root.google.protobuf.Timestamp.verify(message.updated_at);
-                if (error)
-                    return "updated_at." + error;
-            }
             if (message.is_admin != null && message.hasOwnProperty("is_admin"))
                 if (typeof message.is_admin !== "boolean")
                     return "is_admin: boolean expected";
@@ -612,16 +520,6 @@ export const main = $root.main = (() => {
                 for (let i = 0; i < object.account_ids_order.length; ++i)
                     message.account_ids_order[i] = String(object.account_ids_order[i]);
             }
-            if (object.created_at != null) {
-                if (typeof object.created_at !== "object")
-                    throw TypeError(".main.User.created_at: object expected");
-                message.created_at = $root.google.protobuf.Timestamp.fromObject(object.created_at);
-            }
-            if (object.updated_at != null) {
-                if (typeof object.updated_at !== "object")
-                    throw TypeError(".main.User.updated_at: object expected");
-                message.updated_at = $root.google.protobuf.Timestamp.fromObject(object.updated_at);
-            }
             if (object.is_admin != null)
                 message.is_admin = Boolean(object.is_admin);
             return message;
@@ -645,8 +543,6 @@ export const main = $root.main = (() => {
             if (options.defaults) {
                 object.id = "";
                 object.current_account_id = "";
-                object.created_at = null;
-                object.updated_at = null;
                 object.is_admin = false;
             }
             if (message.id != null && message.hasOwnProperty("id"))
@@ -658,10 +554,6 @@ export const main = $root.main = (() => {
                 for (let j = 0; j < message.account_ids_order.length; ++j)
                     object.account_ids_order[j] = message.account_ids_order[j];
             }
-            if (message.created_at != null && message.hasOwnProperty("created_at"))
-                object.created_at = $root.google.protobuf.Timestamp.toObject(message.created_at, options);
-            if (message.updated_at != null && message.hasOwnProperty("updated_at"))
-                object.updated_at = $root.google.protobuf.Timestamp.toObject(message.updated_at, options);
             if (message.is_admin != null && message.hasOwnProperty("is_admin"))
                 object.is_admin = message.is_admin;
             return object;

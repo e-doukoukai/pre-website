@@ -1,0 +1,77 @@
+<div class="text-center">
+  <mat-card>
+    <mat-card-title>サインアップ</mat-card-title>
+    <mat-card-subtitle>経済学部同好会アカウントを作成</mat-card-subtitle>
+    <mat-card-content
+      >京都大学学生メールを使用してアカウントを作成することですべての機能が利用可能になります。<br />サインアップ時、確認メールが送信されます。</mat-card-content
+    >
+    <form
+      #formRef="ngForm"
+      (submit)="
+        onSubmit(nameRef.value, mailRef.value, passwordRef.value, passwordConfirmationRef.value)
+      "
+    >
+      <mat-form-field hintLabel="4文字以上" class="w-4/5 md:w-1/2" appearance="fill">
+        <mat-label>ユーザー名</mat-label>
+        <input #nameRef ngModel name="name" matInput required placeholder="Input name" />
+        <mat-hint align="end">{{ nameRef.value?.length || 0 }}/4</mat-hint>
+      </mat-form-field>
+      <br />
+      <mat-form-field hintLabel="@までを入力" class="w-4/5 md:w-1/4" appearance="fill">
+        <mat-label>メールアドレス</mat-label>
+        <input #mailRef ngModel name="mail" matInput required placeholder="Input value" />
+      </mat-form-field>
+      <mat-form-field class="w-4/5 md:w-1/4" appearance="fill">
+        <mat-label>所属</mat-label>
+        <mat-select [(ngModel)]="mailDomain" name="domain">
+          <mat-option value="@st.kyoto-u.ac.jp">@st.kyoto-u.ac.jp</mat-option>
+          <mat-option value="@kyoto-u.jp">@kyoto-u.jp</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br />
+      <mat-form-field hintLabel="8文字以上" class="w-4/5 md:w-1/2" appearance="fill">
+        <mat-label>パスワードの登録</mat-label>
+        <input
+          #passwordRef
+          ngModel
+          [type]="isPasswordVisible ? 'text' : 'password'"
+          name="password"
+          matInput
+          required
+          placeholder="Input value"
+          minlength="8"
+        />
+        <button mat-button type="button" matSuffix (click)="togglePasswordVisibility()">
+          <mat-icon>
+            {{ isPasswordVisible ? 'visibility' : 'visibility_off' }}
+          </mat-icon>
+        </button>
+        <mat-hint align="end">{{ passwordRef.value?.length || 0 }}/8</mat-hint>
+      </mat-form-field>
+      <br />
+      <mat-form-field hintLabel="再度パスワードを入力" class="w-4/5 md:w-1/2" appearance="fill">
+        <mat-label>パスワードの確認</mat-label>
+        <input
+          #passwordConfirmationRef
+          ngModel
+          [type]="isPasswordVisible ? 'text' : 'password'"
+          name="passwordConfirmation"
+          matInput
+          required
+          placeholder="Input value"
+          minlength="8"
+        />
+        <button mat-button type="button" matSuffix (click)="togglePasswordVisibility()">
+          <mat-icon>
+            {{ isPasswordVisible ? 'visibility' : 'visibility_off' }}
+          </mat-icon>
+        </button>
+      </mat-form-field>
+      <br />
+
+      <button mat-flat-button color="primary" type="submit" [disabled]="formRef.invalid">
+        サインアップ
+      </button>
+    </form>
+  </mat-card>
+</div>
