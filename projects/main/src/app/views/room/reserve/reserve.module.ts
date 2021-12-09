@@ -1,12 +1,12 @@
-import { MaterialModule } from '../material.module';
-import { RoomComponent } from './room.component';
+import { MaterialModule } from '../../material.module';
+import { ReserveComponent } from './reserve.component';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [RoomComponent],
+  declarations: [ReserveComponent],
   imports: [CommonModule, RouterModule, MaterialModule],
-  exports: [RoomComponent],
+  exports: [ReserveComponent],
 })
-export class RoomModule {}
+export class ReserveModule {}
