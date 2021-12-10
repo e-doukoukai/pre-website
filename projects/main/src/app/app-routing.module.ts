@@ -16,6 +16,14 @@ const routes: Routes = [
     path: 'accounts',
     loadChildren: () => import('./pages/accounts/accounts.module').then((m) => m.AppAccountsModule),
   },
+  {
+    path: 'contact',
+    loadChildren: () => import('./pages/contact/contact.module').then((m) => m.AppContactModule),
+  },
+  {
+    path: 'printer',
+    loadChildren: () => import('./pages/printer/printer.module').then((m) => m.AppPrinterModule),
+  },
 ];
 
 @NgModule({

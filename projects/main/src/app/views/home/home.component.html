@@ -1,7 +1,20 @@
-<div class="text-center">
-  <h2>京都大学経済学部同好会</h2>
-  <h3>103rd ～Since 1919～</h3>
+<div class="text-center w-full lg:mx-auto lg:w-1/2">
   <mat-card class="mb-20">
+    <mat-card-title>京都大学 経済学部同好会</mat-card-title>
+    <mat-card-subtitle>~Since 1919~</mat-card-subtitle>
+    <img
+      class="object-scale-down h-72 w-1/2"
+      mat-card-image
+      src="assets/images/doukoukai.jpg"
+      alt="Photo of a Shiba Inu"
+    />
+    <mat-card-content>
+      <p>京都大学経済学部同好会は経済学部の自治会です。</p>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="mb-20">
+    <mat-card-title>学生アカウントメニュー</mat-card-title>
+    <mat-card-subtitle>一部の機能はログインなしでもお使いいただけます</mat-card-subtitle>
     <ng-container *ngIf="!user; then loading; else loaded"></ng-container>
     <ng-template #loading>
       <div class="flex">
@@ -11,9 +24,7 @@
           </button>
         </div>
         <div class="flex-auto">
-          <button mat-flat-button color="accent" routerLink="/accounts/signin">
-            学生アカウントでログイン
-          </button>
+          <button mat-flat-button color="accent" routerLink="/accounts/signin">ログイン</button>
         </div>
       </div>
     </ng-template>
@@ -29,8 +40,8 @@
     </ng-template>
   </mat-card>
 
-  <h3>メニュー</h3>
   <mat-card>
+    <mat-card-title>機能メニュー</mat-card-title>
     <mat-nav-list>
       <h3 matSubheader>コンテンツ</h3>
       <mat-list-item routerLink="/seminar">
@@ -43,7 +54,7 @@
         購読室利用申し込み
       </mat-list-item>
       <mat-divider></mat-divider>
-      <mat-list-item routerLink="/">
+      <mat-list-item routerLink="/printer">
         <mat-icon color="accent" class="mr-4">invert_colors</mat-icon>
         印刷室ご利用方法
       </mat-list-item>
@@ -75,7 +86,7 @@
         SNS
       </mat-list-item>
       <mat-divider></mat-divider>
-      <mat-list-item routerLink="/">
+      <mat-list-item routerLink="/contact">
         <mat-icon color="accent" class="mr-4">mail_outline</mat-icon>
         お問い合わせ
       </mat-list-item>

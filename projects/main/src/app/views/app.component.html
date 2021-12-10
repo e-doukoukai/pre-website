@@ -1,24 +1,62 @@
-<mat-sidenav-container>
+<mat-toolbar>
+  <span class="mr-2">
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </span>
+  <button mat-icon-button [routerLink]="'/'">
+    <img src="assets/images/banana.ico" />
+  </button>
+  <button mat-button class="text-2xl" [routerLink]="'/'">経済学部同好会</button>
+
+  <span class="flex-auto"></span>
+  <button mat-icon-button [routerLink]="'/contact'">
+    <mat-icon>mail</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-sidenav-container style="height: calc(100vh - 64px)">
+  <mat-sidenav mode="over" #sidenav>
+    <mat-nav-list>
+      <mat-list-item routerLink="/seminar" (click)="sidenav.close()">
+        <span>ゼミ紹介</span>
+      </mat-list-item>
+      <mat-list-item routerLink="/printer" (click)="sidenav.close()">
+        <span>印刷 </span>
+      </mat-list-item>
+      <mat-list-item routerLink="/room" (click)="sidenav.close()">
+        <span>購読室</span>
+      </mat-list-item>
+      <mat-list-item routerLink="/contact" (click)="sidenav.close()">
+        <span>お問い合わせ</span>
+      </mat-list-item>
+      <mat-list-item routerLink="/accounts/account" (click)="sidenav.close()">
+        <span>アカウント設定</span>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<!-- <mat-sidenav-container>
   <mat-sidenav #sidenav>
     <mat-nav-list> </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar>
       <button mat-icon-button [routerLink]="'/'">
-        <!-- <img src="assets/images/sample.svg" /> -->
+        <img src="assets/images/banana.ico" />
       </button>
-      <h1>経済学部同好会</h1>
+      <h1 [routerLink]="'/'">経済学部同好会</h1>
       <span class="flex-auto"></span>
-      <a mat-button [routerLink]="''">
+      <a mat-button [routerLink]="'/'">
         <span>Home</span>
       </a>
       <a mat-button [routerLink]="'/contact'">
         <span>Contact</span>
       </a>
-      <!-- <a mat-button [routerLink]="'/others'">
-        <span>Others</span>
-      </a> -->
     </mat-toolbar>
     <ng-content></ng-content>
   </mat-sidenav-content>
-</mat-sidenav-container>
+</mat-sidenav-container> -->
