@@ -1,0 +1,30 @@
+<div class="text-center">
+  <mat-card>
+    <mat-card-title>購読室</mat-card-title>
+    <mat-card-content>
+      <p>
+        経済学部地下購読室は、法経本館東側地下に所在する定員10人ほどの部屋となっており、購読室1～購読室3の3部屋が存在します。
+      </p>
+      <p>
+        スプレッドシートで空き時間を確認いただいたのち、下記のフォームに記入して予約していいただくことで利用可能です。
+      </p>
+    </mat-card-content>
+  </mat-card>
+
+  <br />
+  <mat-card>
+    <mat-nav-list>
+      <h3 matSubheader>コンテンツ</h3>
+      <mat-divider></mat-divider>
+      <mat-list-item routerLink="/room/reserve">
+        <mat-icon color="accent" class="mr-4">watch_later</mat-icon>
+        購読室利用申し込み
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item routerLink="/room/schedule">
+        <mat-icon color="accent" class="mr-4">invert_colors</mat-icon>
+        購読室予約状況
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-card>
+</div>
