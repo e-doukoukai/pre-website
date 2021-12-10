@@ -2,18 +2,31 @@
   <h2>京都大学経済学部同好会</h2>
   <h3>103rd ～Since 1919～</h3>
   <mat-card class="mb-20">
-    <div class="flex">
-      <div class="flex-auto">
-        <button mat-flat-button color="primary" routerLink="/accounts/signup">
-          学生アカウントを作成
-        </button>
+    <ng-container *ngIf="!user; then loading; else loaded"></ng-container>
+    <ng-template #loading>
+      <div class="flex">
+        <div class="flex-auto">
+          <button mat-flat-button color="primary" routerLink="/accounts/signup">
+            学生アカウントを作成
+          </button>
+        </div>
+        <div class="flex-auto">
+          <button mat-flat-button color="accent" routerLink="/accounts/signin">
+            学生アカウントでログイン
+          </button>
+        </div>
       </div>
-      <div class="flex-auto">
-        <button mat-flat-button color="accent" routerLink="/accounts/signin">
-          学生アカウントでログイン
-        </button>
+    </ng-template>
+    <ng-template #loaded>
+      <div class="flex">
+        <div class="flex-auto">
+          <button mat-flat-button color="primary" routerLink="/accounts/account">マイページ</button>
+        </div>
+        <div class="flex-auto">
+          <button mat-flat-button color="accent" (click)="onClickSignout()">ログアウト</button>
+        </div>
       </div>
-    </div>
+    </ng-template>
   </mat-card>
 
   <h3>メニュー</h3>
