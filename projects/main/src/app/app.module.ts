@@ -21,6 +21,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { SharedModule } from 'projects/shared/src/common';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 const initApp = () => initializeApp(environment.firebase);
 
@@ -47,6 +48,12 @@ const initApp = () => initializeApp(environment.firebase);
     provideAuth(() => getAuth()),
     provideStorage(() => getStorage()),
     provideAnalytics(() => getAnalytics()),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
