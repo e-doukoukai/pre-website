@@ -1,4 +1,4 @@
-<div class="text-center w-full lg:mx-auto lg:w-1/2">
+<div class="w-full lg:mx-auto lg:w-1/3">
   <mat-card class="mb-10">
     <mat-card-title>印刷機のご利用について</mat-card-title>
     <mat-card-content
@@ -30,13 +30,18 @@
       </mat-list-item>
       <mat-divider [inset]="true"></mat-divider>
     </mat-list>
-    <div class="mb-4">
-      <button mat-flat-button color="primary" routerLink="/printer/rotary">輪転機ご利用方法</button>
-    </div>
-    <div class="mb-4">
-      <button mat-flat-button color="accent" routerLink="/printer/report">
-        使用枚数報告フォーム
-      </button>
+    <div class="flex">
+      <div class="flex-auto"></div>
+      <div class="flex-auto">
+        <button mat-flat-button color="primary" routerLink="/printer/rotary">
+          輪転機ご利用方法
+        </button>
+      </div>
+      <div class="flex-auto">
+        <button mat-flat-button color="accent" routerLink="/printer/report">
+          使用枚数報告フォーム
+        </button>
+      </div>
     </div>
   </mat-card>
 
@@ -64,10 +69,13 @@
       </mat-list-item>
       <mat-divider [inset]="true"></mat-divider>
     </mat-list>
-    <div class="mb-4">
-      <button mat-flat-button color="primary" routerLink="/printer/monochrome">
-        白黒コピー機ご利用方法
-      </button>
+    <div class="flex">
+      <div class="flex-auto"></div>
+      <div class="flex-auto">
+        <button mat-flat-button color="primary" routerLink="/printer/monochrome">
+          白黒コピー機ご利用方法
+        </button>
+      </div>
     </div>
   </mat-card>
 
@@ -97,10 +105,13 @@
       </mat-list-item>
       <mat-divider [inset]="true"></mat-divider>
     </mat-list>
-    <div class="mb-4">
-      <button mat-flat-button color="primary" routerLink="/printer/color">
-        カラーコピー機ご利用方法
-      </button>
+    <div class="flex">
+      <div class="flex-auto"></div>
+      <div class="flex-auto">
+        <button mat-flat-button color="primary" routerLink="/printer/color">
+          カラーコピー機ご利用方法
+        </button>
+      </div>
     </div>
   </mat-card>
 </div>
