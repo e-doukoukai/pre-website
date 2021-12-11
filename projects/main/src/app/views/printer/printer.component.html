@@ -1,3 +1,106 @@
 <div class="text-center w-full lg:mx-auto lg:w-1/2">
-  <mat-card></mat-card>
+  <mat-card class="mb-10">
+    <mat-card-title>印刷機のご利用について</mat-card-title>
+    <mat-card-content
+      >経済学部同好会では以下の3種類の印刷機の管理・運用を行っております。以下の説明をよく読んだ上で利用し、輪転機ご利用後は報告フォームへの記入をお願いいたします。
+      輪転機・モノクロコピー機は印刷機室、カラーコピー機は同好会事務室前に設置しております。</mat-card-content
+    >
+  </mat-card>
+
+  <mat-card class="mb-10">
+    <mat-card-title>輪転機</mat-card-title>
+    <mat-card-content
+      >輪転機は安価で大量の印刷が可能なコピー機です。白黒印刷のみ対応です。版（マスター）を作成し、その1枚のマスターを元に同じ書類を大量に印刷する機能を持ち、ビラやパンフレットの印刷に適しています。<br />料金は以下の通りです。利用後は輪転機ご利用フォームに使用マスター数と印刷枚数をご記入ください。</mat-card-content
+    >
+    <mat-list class="mb-4">
+      <mat-list-item class="flex flex-wrap">
+        <span class="flex-auto break-all"></span>
+        <span class="break-all">インク代:</span>
+        <span class="flex-auto break-all"></span>
+        <span class="break-all">0.5円/枚</span>
+        <span class="flex-auto break-all"></span>
+      </mat-list-item>
+      <mat-divider [inset]="true"></mat-divider>
+      <mat-list-item class="flex flex-wrap">
+        <span class="flex-auto break-all"></span>
+        <span class="break-all">マスター代:</span>
+        <span class="flex-auto break-all"></span>
+        <span class="break-all">50円/枚</span>
+        <span class="flex-auto break-all"></span>
+      </mat-list-item>
+      <mat-divider [inset]="true"></mat-divider>
+    </mat-list>
+    <div class="mb-4">
+      <button mat-flat-button color="primary" routerLink="/printer/rotary">輪転機ご利用方法</button>
+    </div>
+    <div class="mb-4">
+      <button mat-flat-button color="accent" routerLink="/printer/report">
+        使用枚数報告フォーム
+      </button>
+    </div>
+  </mat-card>
+
+  <mat-card class="mb-10">
+    <mat-card-title>白黒コピー機</mat-card-title>
+    <mat-card-content
+      >経済学部同好会は経済学部総務課より委託を受け、コピー機の運用を行っております。経済学部生は一年間に100枚の印刷が可能です。
+      ご利用にはコピーカードが必要ですのでお持ちでない方は事務室までお越しください。学生番号の確認後、お渡しいたします。</mat-card-content
+    >
+    <mat-list class="mb-4">
+      <mat-list-item class="flex flex-wrap">
+        <span class="flex-auto break-all"></span>
+        <span class="break-all">料金:</span>
+        <span class="flex-auto break-all"></span>
+        <span class="break-all">0円/枚</span>
+        <span class="flex-auto break-all"></span>
+      </mat-list-item>
+      <mat-divider [inset]="true"></mat-divider>
+      <mat-list-item class="flex flex-wrap">
+        <span class="flex-auto break-all"></span>
+        <span class="break-all">印刷可能枚数:</span>
+        <span class="flex-auto break-all"></span>
+        <span class="break-all">100枚/年（経済学部生）</span>
+        <span class="flex-auto break-all"></span>
+      </mat-list-item>
+      <mat-divider [inset]="true"></mat-divider>
+    </mat-list>
+    <div class="mb-4">
+      <button mat-flat-button color="primary" routerLink="/printer/monochrome">
+        白黒コピー機ご利用方法
+      </button>
+    </div>
+  </mat-card>
+
+  <mat-card class="mb-10">
+    <mat-card-title>カラーコピー機</mat-card-title>
+    <mat-card-content
+      >カラーコピーをご希望の場合、経済学部同好会事務室のレーザープリンターもご利用可能です。
+      当会の事務用のものになりますので、大量印刷の際は生協など他のサービスのご利用をご検討ください。
+      PCのUSBポートからの印刷も可能ですが、ご自身で設定可能な方のみご利用ください。
+      ご利用の際は事務室の常任委員までお声がけください。</mat-card-content
+    >
+    <mat-list class="mb-4">
+      <mat-list-item class="flex flex-wrap">
+        <span class="flex-auto break-all"></span>
+        <span class="break-all">料金:</span>
+        <span class="flex-auto break-all"></span>
+        <span class="break-all">50円/枚</span>
+        <span class="flex-auto break-all"></span>
+      </mat-list-item>
+      <mat-divider [inset]="true"></mat-divider>
+      <mat-list-item class="flex flex-wrap">
+        <span class="flex-auto break-all"></span>
+        <span class="break-all">印刷可能枚数:</span>
+        <span class="flex-auto break-all"></span>
+        <span class="break-all">100枚/年（経済学部生）</span>
+        <span class="flex-auto break-all"></span>
+      </mat-list-item>
+      <mat-divider [inset]="true"></mat-divider>
+    </mat-list>
+    <div class="mb-4">
+      <button mat-flat-button color="primary" routerLink="/printer/color">
+        カラーコピー機ご利用方法
+      </button>
+    </div>
+  </mat-card>
 </div>

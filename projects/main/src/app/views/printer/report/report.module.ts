@@ -1,12 +1,12 @@
-import { MaterialModule } from '../material.module';
-import { PrinterComponent } from './printer.component';
+import { MaterialModule } from '../../material.module';
+import { ReportComponent } from './report.component';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [PrinterComponent],
+  declarations: [ReportComponent],
   imports: [CommonModule, RouterModule, MaterialModule],
-  exports: [PrinterComponent],
+  exports: [ReportComponent],
 })
-export class PrinterModule {}
+export class ReportModule {}
