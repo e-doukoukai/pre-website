@@ -1,5 +1,5 @@
 <mat-toolbar>
-  <span class="mr-2">
+  <span class="flex-auto">
     <button mat-icon-button (click)="sidenav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
@@ -7,11 +7,13 @@
   <button mat-icon-button [routerLink]="'/'">
     <img src="assets/images/banana.ico" />
   </button>
-  <button mat-button class="text-2xl" [routerLink]="'/'">経済学部同好会</button>
-
+  <button mat-button class="text-base sm:text-2xl" [routerLink]="'/'">経済学部同好会</button>
   <span class="flex-auto"></span>
   <button mat-icon-button [routerLink]="'/contact'">
-    <mat-icon>mail</mat-icon>
+    <mat-icon>mail_outline</mat-icon>
+  </button>
+  <button mat-icon-button [routerLink]="'/accounts/account'">
+    <mat-icon>settings</mat-icon>
   </button>
 </mat-toolbar>
 
@@ -21,11 +23,11 @@
       <mat-list-item routerLink="/seminar" (click)="sidenav.close()">
         <span>ゼミ紹介</span>
       </mat-list-item>
-      <mat-list-item routerLink="/printer" (click)="sidenav.close()">
-        <span>印刷 </span>
-      </mat-list-item>
       <mat-list-item routerLink="/room" (click)="sidenav.close()">
         <span>購読室</span>
+      </mat-list-item>
+      <mat-list-item routerLink="/printer" (click)="sidenav.close()">
+        <span>印刷 </span>
       </mat-list-item>
       <mat-list-item routerLink="/contact" (click)="sidenav.close()">
         <span>お問い合わせ</span>
