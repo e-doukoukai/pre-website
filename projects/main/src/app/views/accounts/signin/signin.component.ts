@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 export type EnterOnSubmitEvent = {
   mail: string;
@@ -11,10 +11,8 @@ export type EnterOnSubmitEvent = {
   styleUrls: ['./signin.component.css'],
 })
 export class SigninComponent implements OnInit {
-  @Input()
   mail?: string | null;
 
-  @Input()
   password?: string | null;
 
   @Output()

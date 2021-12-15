@@ -18,6 +18,7 @@
     <ng-container *ngIf="!user; then loading; else loaded"></ng-container>
     <ng-template #loading>
       <div class="flex">
+        <div class="flex-auto"></div>
         <div class="flex-auto">
           <button mat-flat-button color="primary" routerLink="/accounts/signup">
             学生アカウントを作成
@@ -30,6 +31,7 @@
     </ng-template>
     <ng-template #loaded>
       <div class="flex">
+        <div class="flex-auto"></div>
         <div class="flex-auto">
           <button mat-flat-button color="primary" routerLink="/accounts/account">マイページ</button>
         </div>
