@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 export type CreateOnSubmitEvent = {
   name: string;
@@ -13,16 +13,12 @@ export type CreateOnSubmitEvent = {
   styleUrls: ['./signup.component.css'],
 })
 export class SignupComponent implements OnInit {
-  @Input()
   name?: string | null;
 
-  @Input()
   mail?: string | null;
 
-  @Input()
   password?: string | null;
 
-  @Input()
   passwordConfirmation?: string | null;
 
   @Output()
@@ -38,7 +34,8 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onSubmit(name: string, mail: string, password: string, passwordConfirmation: string) {
+  onSubmit(mail: string, password: string, passwordConfirmation: string) {
+    const name = '';
     this.isPasswordVisible = false;
     mail = mail + this.mailDomain;
     console.log(mail);
