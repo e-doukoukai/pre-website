@@ -6,16 +6,9 @@
       >アカウントをお持ちの場合こちらからログインしてください。<br />全ての機能が有効になります。</mat-card-content
     >
     <form #formRef="ngForm" (submit)="onSubmit(mailRef.value, passwordRef.value)">
-      <mat-form-field hintLabel="@までを入力" class="w-4/5 md:w-1/4" appearance="fill">
+      <mat-form-field hintLabel="@までを入力" class="w-4/5 md:w-1/2" appearance="fill">
         <mat-label>メールアドレス</mat-label>
         <input #mailRef ngModel name="mail" matInput required placeholder="Input value" />
-      </mat-form-field>
-      <mat-form-field class="w-4/5 md:w-1/4" appearance="fill">
-        <mat-label>所属</mat-label>
-        <mat-select [(ngModel)]="mailDomain" name="domain">
-          <mat-option value="@st.kyoto-u.ac.jp">@st.kyoto-u.ac.jp</mat-option>
-          <mat-option value="@kyoto-u.jp">@kyoto-u.jp</mat-option>
-        </mat-select>
       </mat-form-field>
       <br />
       <mat-form-field hintLabel="8文字以上" class="w-4/5 md:w-1/2" appearance="fill">

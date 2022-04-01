@@ -18,8 +18,6 @@ export class SigninComponent implements OnInit {
   @Output()
   appSubmit: EventEmitter<EnterOnSubmitEvent>;
 
-  mailDomain: string | undefined;
-
   isPasswordVisible: boolean = false;
 
   constructor() {
@@ -29,7 +27,6 @@ export class SigninComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit(mail: string, password: string) {
-    mail = mail + this.mailDomain;
     this.isPasswordVisible = false;
     this.appSubmit.emit({ mail, password });
   }
