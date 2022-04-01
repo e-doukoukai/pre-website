@@ -24,8 +24,6 @@ export class SignupComponent implements OnInit {
   @Output()
   appSubmit: EventEmitter<CreateOnSubmitEvent>;
 
-  mailDomain: string | undefined;
-
   isPasswordVisible: boolean = false;
 
   constructor() {
@@ -37,8 +35,6 @@ export class SignupComponent implements OnInit {
   onSubmit(mail: string, password: string, passwordConfirmation: string) {
     const name = '';
     this.isPasswordVisible = false;
-    mail = mail + this.mailDomain;
-    console.log(mail);
     if (password !== passwordConfirmation) {
       alert('パスワードが異なります。');
       return;
