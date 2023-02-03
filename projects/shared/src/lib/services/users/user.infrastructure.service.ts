@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collection, collectionGroup, query, QueryConstraint, doc, getDoc, docData, getDocs, collectionData, setDoc, serverTimestamp } from '@angular/fire/firestore';
+import { Firestore, collection, collectionGroup, query, QueryConstraint, doc, getDoc, docData, getDocs, collectionData, setDoc, serverTimestamp, Query, DocumentReference } from '@angular/fire/firestore';
 import { IUserInfrastructureService } from './user.service';
 import { User } from '@local/common';
 import { UserFirestore } from '@local/common';
@@ -12,24 +12,24 @@ export class UserInfrastructureService
 
   constructor(private readonly firestore: Firestore) {}
 
-  collection(...queryConstraints: QueryConstraint[]) {
+  collection(...queryConstraints: QueryConstraint[]):Query<User> {
     const ref = collection(this.firestore, UserFirestore.collectionPath());
 
     return (queryConstraints.length > 0
-      ? query(ref, ...queryConstraints) : ref).withConverter(UserFirestore.converter);
+      ? query(ref, ...queryConstraints) : ref).withConverter(UserFirestore.converter) as Query<User>;
   }
 
-  collectionGroup(...queryConstraints: QueryConstraint[]) {
+  collectionGroup(...queryConstraints: QueryConstraint[]):Query<User> {
     const ref = collectionGroup(this.firestore, UserFirestore.collectionID);
 
     return (queryConstraints.length > 0
-      ? query(ref, ...queryConstraints) : ref).withConverter(UserFirestore.converter);
+      ? query(ref, ...queryConstraints) : ref).withConverter(UserFirestore.converter) as Query<User>;
   }
 
-  document(id?: string) {
+  document(id?: string): DocumentReference<User> {
     const ref = collection(this.firestore, UserFirestore.collectionPath());
 
-    return (id ? doc(this.firestore, ref.path, id) : doc(this.firestore, ref.path)).withConverter(UserFirestore.converter);
+    return (id ? doc(this.firestore, ref.path, id) : doc(this.firestore, ref.path)).withConverter(UserFirestore.converter) as DocumentReference<User>;
   }
 
   get(id: string) {

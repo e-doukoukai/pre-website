@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collection, collectionGroup, query, QueryConstraint, doc, getDoc, docData, getDocs, collectionData, setDoc, serverTimestamp } from '@angular/fire/firestore';
+import { Firestore, collection, collectionGroup, query, QueryConstraint, doc, getDoc, docData, getDocs, collectionData, setDoc, serverTimestamp, DocumentReference, Query } from '@angular/fire/firestore';
 import { IAccountInfrastructureService } from './account.service';
 import { Account } from '@local/common';
 import { AccountFirestore } from '@local/common';
@@ -12,24 +12,24 @@ export class AccountInfrastructureService
 
   constructor(private readonly firestore: Firestore) {}
 
-  collection(...queryConstraints: QueryConstraint[]) {
+  collection(...queryConstraints: QueryConstraint[]): Query<Account> {
     const ref = collection(this.firestore, AccountFirestore.collectionPath());
 
     return (queryConstraints.length > 0
-      ? query(ref, ...queryConstraints) : ref).withConverter(AccountFirestore.converter);
+      ? query(ref, ...queryConstraints) : ref).withConverter(AccountFirestore.converter) as Query<Account>;
   }
 
-  collectionGroup(...queryConstraints: QueryConstraint[]) {
+  collectionGroup(...queryConstraints: QueryConstraint[]):Query<Account> {
     const ref = collectionGroup(this.firestore, AccountFirestore.collectionID);
 
     return (queryConstraints.length > 0
-      ? query(ref, ...queryConstraints) : ref).withConverter(AccountFirestore.converter);
+      ? query(ref, ...queryConstraints) : ref).withConverter(AccountFirestore.converter)as Query<Account>;
   }
 
-  document(id?: string) {
+  document(id?: string):DocumentReference<Account> {
     const ref = collection(this.firestore, AccountFirestore.collectionPath());
 
-    return (id ? doc(this.firestore, ref.path, id) : doc(this.firestore, ref.path)).withConverter(AccountFirestore.converter);
+    return (id ? doc(this.firestore, ref.path, id) : doc(this.firestore, ref.path)).withConverter(AccountFirestore.converter) as DocumentReference<Account>;
   }
 
   get(id: string) {
